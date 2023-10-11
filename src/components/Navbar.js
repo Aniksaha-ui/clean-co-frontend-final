@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 const Navbar = ({ children }) => {
   const [dark, setDark] = useState(false);
   const { pathname } = useLocation();
-  console.log(pathname);
+  
 
   const [admin] = useAdmin();
 
@@ -147,6 +147,13 @@ const Navbar = ({ children }) => {
               About
             </NavLink>
           </li>
+          {admin && (
+                <li>
+                  <NavLink to='/dashboard' className='rounded-lg'>
+                    Dashboard
+                  </NavLink>
+                </li>
+              )}
           <li>
             <NavLink to='/services' className='rounded-lg'>
               Services
